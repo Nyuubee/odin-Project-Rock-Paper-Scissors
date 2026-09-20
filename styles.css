@@ -1,0 +1,162 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    min-height: 100vh;
+    text-align: center;
+    background-color: rgb(46, 46, 46);
+    color: white;
+
+    font-family: 'Press Start 2P', cursive;
+}
+
+.header {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px #000;
+    padding: 24px 0;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-again-button, #start-over{
+    max-width: 150px;
+    height: 50px;
+    background-color: rgb(46, 46, 46);
+    border: 6px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s ease-out;
+    color: white;
+    font-size: 1rem;
+}
+
+.play-again-button:hover {
+    background-color: grey;
+    transform: scale(1.15);
+    transition: transform 0.2s ease-in;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    border-radius: 12px;
+    padding: 32px;
+    width: 80%;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    flex-direction: column;
+}
+
+.modal.show {
+    display: flex;
+}
+
+/* Enemy container */
+.enemy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.enemy-container button {
+    max-width: 150px;
+    height: 150px;
+    border: 6px solid #000;
+    border-radius: 8px;
+    cursor: not-allowed;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+    filter: grayscale(80%) brightness(0.6);
+}
+
+.enemy-container button:only-child {
+    filter: none;
+}
+
+.enemy-container button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Player container */
+.player-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.player-container button {
+    max-width: 150px;
+    height: 150px;
+    background-color: whitesmoke;
+    border: 6px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s ease-out;
+}
+
+.player-container button:hover {
+    background-color: grey;
+    transform: scale(1.15);
+    transition: transform 0.2s ease-in;
+    transition: rotateY(180deg);
+
+}
+
+.player-container button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Scores container */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0;
+}
+
+.result-container .container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#win-score {
+    color: #4CAF50;
+}
+
+#lose-score {
+    color: #F44336;
+}
+
+#draw-score {
+    color: #FFC107;
+}
